@@ -21,5 +21,36 @@ export default meta;
 type Story = StoryObj<typeof Treeview>;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    data: [
+      {
+        title: "data 1",
+        value: 1,
+        children: [
+          { title: "data 1 child 1", value: 11 },
+          { title: "data 1 child 2", value: 12 },
+        ],
+      },
+      { title: "data 2", value: 2 },
+      { title: "data 3", value: 3 },
+    ],
+  },
+};
+
+export const WithCheckbox: Story = {
+  args: {
+    onlyRead: false,
+    data: [
+      {
+        title: "data 1",
+        value: 1,
+        children: [
+          { title: "data 1 child 1", value: 11 },
+          { title: "data 1 child 2", value: 12 },
+        ],
+      },
+      { title: "data 2", value: 2 },
+      { title: "data 3", value: 3 },
+    ],
+  },
 };
