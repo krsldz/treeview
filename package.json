@@ -18,12 +18,22 @@
     "@storybook/addon-onboarding": "^8.5.8",
     "@storybook/addon-webpack5-compiler-swc": "^2.1.0",
     "@storybook/blocks": "^8.5.8",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^8.5.8",
     "@storybook/react-webpack5": "^8.5.8",
     "@storybook/test": "^8.5.8",
     "@types/react": "^19.0.10",
+    "css-loader": "^7.1.2",
     "react": "^19.0.0",
+    "sass": "^1.85.0",
+    "sass-loader": "^16.0.5",
     "storybook": "^8.5.8",
-    "typescript": "^5.7.3"
+    "style-loader": "^4.0.0",
+    "typescript": "^5.7.3",
+    "webpack": "^5.98.0"
+  },
+  "dependencies": {
+    "@storybook/addon-styling-webpack": "^1.0.1",
+    "clsx": "^2.1.1"
   }
 }

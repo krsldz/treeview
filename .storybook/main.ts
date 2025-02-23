@@ -8,10 +8,17 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    "@storybook/addon-styling-webpack",
   ],
-  framework: {
-    name: "@storybook/react-webpack5",
-    options: {},
+  framework: "@storybook/react-webpack5",
+  core: {
+    builder: {
+      name: "@storybook/builder-webpack5",
+      options: {
+        fsCache: true,
+        lazyCompilation: true,
+      },
+    },
   },
 };
 export default config;
