@@ -1,5 +1,8 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import Treeview from "./Treeview";
+import { useState } from "react";
+import { EntityType } from "./types";
 
 const meta: Meta<typeof Treeview> = {
   title: "UI/Treeview",
@@ -52,5 +55,12 @@ export const WithCheckbox: Story = {
       { title: "data 2", value: 2 },
       { title: "data 3", value: 3 },
     ],
+  },
+  render: (args) => {
+    const [value, setValue] = useState<EntityType[]>([]);
+
+    const handleChange = (data: EntityType[]) => setValue(data);
+
+    return <Treeview onChange={handleChange} value={value} {...args} />;
   },
 };
