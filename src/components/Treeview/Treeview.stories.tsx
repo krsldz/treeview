@@ -30,7 +30,11 @@ export const Default: Story = {
         title: "data 1",
         value: 1,
         children: [
-          { title: "data 1 child 1", value: 11 },
+          {
+            title: "data 1 child 1",
+            value: 11,
+            children: [{ title: "data 1 child 1 child 1", value: 111 }],
+          },
           { title: "data 1 child 2", value: 12 },
         ],
       },

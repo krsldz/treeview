@@ -1,0 +1,13 @@
+.nodeWrap {
+  display: flex;
+  padding: 0 0 10px 10px;
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin-left: 10px;
+}

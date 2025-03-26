@@ -10,6 +10,8 @@ import { EntityType, NodeItem, NodeMap, TreeViewProps, Value } from "./types";
 import Node from "./nested/Node";
 import { getNodeMap, getNodeValues, getUniqueValues } from "./lib";
 
+import "./Treeview.css";
+
 const Treeview: FC<TreeViewProps> = ({
   data,
   onChange,
@@ -103,7 +105,7 @@ const Treeview: FC<TreeViewProps> = ({
     );
   };
 
-  return <div>{roots.map(renderNode)}</div>;
+  return <div className="wrap">{roots.map(renderNode)}</div>;
 };
 
 export default memo(Treeview);

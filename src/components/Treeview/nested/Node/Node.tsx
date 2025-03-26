@@ -1,8 +1,9 @@
-import React, { FC, memo, ReactNode } from "react";
+import React, { FC, memo } from "react";
 import Checkbox from "../Checkbox";
 import { NodeProps } from "./types";
+import Dropdown from "../Dropdown";
 
-import styles from "./Node.module.scss";
+import "./Node.css";
 
 const Node: FC<NodeProps> = ({
   data,
@@ -13,19 +14,23 @@ const Node: FC<NodeProps> = ({
   selected,
 }) => {
   const { data: node, children, open, id } = data;
+  const hasChildren = children.length > 0;
 
   return (
-    <div className={styles.wrap}>
-      {onlyRead ? (
-        <span onClick={() => onToggle(id)}>{node.title}</span>
-      ) : (
-        <Checkbox
-          checked={selected}
-          onChange={() => onChange(data)}
-          label={node.title}
-        />
-      )}
-      {open && children.length > 0 && <div>{renderChildren(children)}</div>}
+    <div className="nodeWrap">
+      {hasChildren && <Dropdown onClick={() => onToggle(id)} open={open} />}
+      <div className="node">
+        {onlyRead ? (
+          <span className="title">{node.title}</span>
+        ) : (
+          <Checkbox
+            checked={selected}
+            onChange={() => onChange(data)}
+            label={node.title}
+          />
+        )}
+        {open && hasChildren && <div>{renderChildren(children)}</div>}
+      </div>
     </div>
   );
 };
