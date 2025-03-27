@@ -91,6 +91,8 @@ const Treeview: FC<TreeViewProps> = ({
     const node = nodeMap[id];
     const { data } = node;
     const isSelected = selected.includes(data.value);
+    const hasSelectedChildren =
+      data.children?.some((child) => selected.includes(child.value)) || false;
 
     return (
       <Node
@@ -101,6 +103,7 @@ const Treeview: FC<TreeViewProps> = ({
         onToggle={onToggle}
         onChange={handleChange}
         selected={isSelected}
+        indeterminate={!isSelected && hasSelectedChildren}
       />
     );
   };

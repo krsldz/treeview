@@ -12,6 +12,7 @@ const Node: FC<NodeProps> = ({
   onToggle,
   onChange,
   selected,
+  indeterminate,
 }) => {
   const { data: node, children, open, id } = data;
   const hasChildren = children.length > 0;
@@ -24,6 +25,7 @@ const Node: FC<NodeProps> = ({
           <span className="title">{node.title}</span>
         ) : (
           <Checkbox
+            indeterminate={indeterminate}
             checked={selected}
             onChange={() => onChange(data)}
             label={node.title}
