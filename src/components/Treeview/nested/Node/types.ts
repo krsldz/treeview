@@ -8,4 +8,5 @@ export type NodeProps = {
   renderChildren: (children: Value[]) => ReactNode[];
   onToggle: (item: Value) => void;
   onChange: (node: NodeItem) => void;
+  indeterminate?: boolean
 };
