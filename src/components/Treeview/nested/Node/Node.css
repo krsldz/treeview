@@ -1,6 +1,7 @@
 .nodeWrap {
   display: flex;
   padding: 0 0 10px 10px;
+  gap: 4px;
 }
 
 .node {
@@ -9,5 +10,5 @@
 }
 
 .title {
-  margin-left: 10px;
+  margin-left: 15px;
 }

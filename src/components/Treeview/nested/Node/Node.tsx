@@ -22,7 +22,7 @@ const Node: FC<NodeProps> = ({
       {hasChildren && <Dropdown onClick={() => onToggle(id)} open={open} />}
       <div className="node">
         {onlyRead ? (
-          <span className="title">{node.title}</span>
+          <span className={hasChildren ? "" : "title"}>{node.title}</span>
         ) : (
           <Checkbox
             indeterminate={indeterminate}
