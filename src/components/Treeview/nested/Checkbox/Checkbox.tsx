@@ -1,4 +1,5 @@
 import React, { FC, memo } from "react";
+import clsx from "clsx";
 import { CheckboxProps } from "./types";
 
 import "./Checkbox.css";
@@ -9,9 +10,10 @@ const Checkbox: FC<CheckboxProps> = ({
   checked,
   disabled,
   indeterminate,
+  classNames,
 }) => {
   return (
-    <div className="checkboxWrap">
+    <div className={clsx("checkboxWrap", classNames.checkbox)}>
       <input
         type="checkbox"
         className={indeterminate ? "indeterminate" : ""}
@@ -19,7 +21,7 @@ const Checkbox: FC<CheckboxProps> = ({
         checked={checked}
         disabled={disabled}
       />
-      <span>{label}</span>
+      <span className={classNames.label}>{label}</span>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { EntityType, NodeData, NodeItem, NodeMap, Value } from "./types";
 
 /**
- * Form a nodes object
+ * Forms a nodes object
  * @param {NodeData[]} nodes - data array
  * @param {Value | null}  parentId - parent element id
  * @param {Value[]} values - chosen values array
@@ -38,7 +38,7 @@ export const getNodeMap = (
 };
 
 /**
- * Set up an array of current node id and its children elements
+ * Sets up an array of current node id and its children elements
  * @param {NodeMap} map - a map of all nodes
  * @param {Value}  id - id of current node
  * @returns {Value[]}
@@ -56,7 +56,7 @@ export const getNodeValues = (map: NodeMap, id: Value): Value[] => {
 };
 
 /**
- * Set up an array of unique values
+ * Sets up an array of unique values
  * @param {EntityType[]} arr - an array of chosen non-unique values
  * @returns {EntityType[]}
  */
@@ -75,4 +75,24 @@ export const getUniqueValues = (arr: EntityType[]): EntityType[] => {
       })
     ),
   ].map((s) => JSON.parse(s));
+};
+
+/**
+ *  Recursively flattens a tree structure into a single array of children nodes
+ * @param {NodeData} data - a tree value
+ * @returns {EntityType[]}
+ */
+export const flattenTree = (data: NodeData): EntityType[] => {
+  if (!data) return [];
+
+  let result: EntityType[] = [];
+
+  if (data.children) {
+    data.children.forEach((child) => {
+      result.push({ id: child.value, name: child.title });
+      result = result.concat(flattenTree(child));
+    });
+  }
+
+  return result;
 };

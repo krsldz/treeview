@@ -1,1 +1,5 @@
-export type DropdownProps = { open: boolean; onClick: () => void };
+export type DropdownProps = {
+  open: boolean;
+  onClick: () => void;
+  className?: string;
+};
