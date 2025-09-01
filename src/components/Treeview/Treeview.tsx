@@ -8,7 +8,7 @@ import React, {
 } from "react";
 import { EntityType, NodeItem, NodeMap, TreeViewProps, Value } from "./types";
 import Node from "./nested/Node";
-import { getNodeMap, getNodeValues, getUniqueValues } from "./lib";
+import { flattenTree, getNodeMap, getNodeValues, getUniqueValues } from "./lib";
 
 import "./Treeview.css";
 
@@ -16,7 +16,9 @@ const Treeview: FC<TreeViewProps> = ({
   data,
   onChange,
   value = [],
+  classNames = {},
   onlyRead = true,
+  withIcons = false,
 }) => {
   const [nodeMap, setNodeMap] = useState<NodeMap>({});
 
@@ -54,9 +56,7 @@ const Treeview: FC<TreeViewProps> = ({
         ids = getNodeValues(nodeMap, id);
       }
 
-      const childrenItems = data?.children?.map((i) => {
-        return { id: i.value, name: i.title };
-      });
+      const childrenItems = flattenTree(data);
 
       returnValue = childrenItems
         ? [...childrenItems, { id: data.value, name: data.title }]
@@ -98,7 +98,9 @@ const Treeview: FC<TreeViewProps> = ({
       <Node
         key={id}
         data={node}
+        classNames={classNames}
         onlyRead={onlyRead}
+        withIcons={withIcons}
         renderChildren={(ids) => ids.map(renderNode)}
         onToggle={onToggle}
         onChange={handleChange}

@@ -1,6 +1,6 @@
 .nodeWrap {
   display: flex;
-  padding: 0 0 10px 10px;
+  padding: 5px 0 5px 5px;
   gap: 4px;
 }
 
@@ -9,6 +9,18 @@
   flex-direction: column;
 }
 
+.titleBlock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .title {
   margin-left: 15px;
 }
+
+.folderIcon {
+  width: 16px;
+  height: 16px;
+}
+

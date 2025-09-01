@@ -3,6 +3,12 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Treeview from "./Treeview";
 import { useState } from "react";
 import { EntityType } from "./types";
+import {
+  ANIMAL_DATA_TREE,
+  FILE_TREE,
+  NATURE_TREE,
+  ORGANIZATION_TREE,
+} from "./constants";
 
 const meta: Meta<typeof Treeview> = {
   title: "UI/Treeview",
@@ -25,40 +31,42 @@ type Story = StoryObj<typeof Treeview>;
 
 export const Default: Story = {
   args: {
-    data: [
-      {
-        title: "data 1",
-        value: 1,
-        children: [
-          {
-            title: "data 1 child 1",
-            value: 11,
-            children: [{ title: "data 1 child 1 child 1", value: 111 }],
-          },
-          { title: "data 1 child 2", value: 12 },
-        ],
-      },
-      { title: "data 2", value: 2 },
-      { title: "data 3", value: 3 },
-    ],
+    data: ANIMAL_DATA_TREE,
   },
 };
 
 export const WithCheckbox: Story = {
   args: {
     onlyRead: false,
-    data: [
-      {
-        title: "data 1",
-        value: 1,
-        children: [
-          { title: "data 1 child 1", value: 11 },
-          { title: "data 1 child 2", value: 12 },
-        ],
-      },
-      { title: "data 2", value: 2 },
-      { title: "data 3", value: 3 },
-    ],
+    data: NATURE_TREE,
+  },
+  render: (args) => {
+    const [value, setValue] = useState<EntityType[]>([]);
+
+    const handleChange = (data: EntityType[]) => setValue(data);
+
+    return <Treeview onChange={handleChange} value={value} {...args} />;
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    withIcons: true,
+    data: FILE_TREE,
+  },
+  render: (args) => {
+    const [value, setValue] = useState<EntityType[]>([]);
+
+    const handleChange = (data: EntityType[]) => setValue(data);
+
+    return <Treeview onChange={handleChange} value={value} {...args} />;
+  },
+};
+
+export const WithCustomStyles: Story = {
+  args: {
+    onlyRead: false,
+    data: ORGANIZATION_TREE,
   },
   render: (args) => {
     const [value, setValue] = useState<EntityType[]>([]);

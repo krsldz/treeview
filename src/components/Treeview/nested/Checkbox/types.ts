@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import { CustomClassNames } from "../../types";
 
 export type CheckboxProps = {
   label: string;
@@ -6,4 +7,5 @@ export type CheckboxProps = {
   checked: boolean;
   disabled?: boolean;
   indeterminate?: boolean;
+  classNames: Partial<CustomClassNames>;
 };
