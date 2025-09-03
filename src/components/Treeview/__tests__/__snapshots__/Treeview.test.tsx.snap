@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Treeview component renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="wrap"
+  >
+    <div
+      class="nodeWrap"
+    >
+      <div
+        class="dropdown"
+      >
+        <img
+          alt="dropdown"
+          class="icon"
+          src="/chevronDown.svg"
+        />
+      </div>
+      <div
+        class="node"
+      >
+        <div
+          class="checkboxWrap"
+        >
+          <input
+            aria-label="Option 1"
+            checked=""
+            class=""
+            type="checkbox"
+          />
+          <span>
+            Option 1
+          </span>
+        </div>
+        <div>
+          <div
+            class="nodeWrap"
+          >
+            <div
+              class="node"
+            >
+              <div
+                class="checkboxWrap"
+              >
+                <input
+                  aria-label="Option 1-1"
+                  class=""
+                  type="checkbox"
+                />
+                <span>
+                  Option 1-1
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="nodeWrap"
+          >
+            <div
+              class="node"
+            >
+              <div
+                class="checkboxWrap"
+              >
+                <input
+                  aria-label="Option 1-2"
+                  class=""
+                  type="checkbox"
+                />
+                <span>
+                  Option 1-2
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="nodeWrap"
+    >
+      <div
+        class="dropdown"
+      >
+        <img
+          alt="dropdown"
+          class="icon"
+          src="/chevronLeft.svg"
+        />
+      </div>
+      <div
+        class="node"
+      >
+        <div
+          class="checkboxWrap"
+        >
+          <input
+            aria-label="Option 2"
+            class=""
+            type="checkbox"
+          />
+          <span>
+            Option 2
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

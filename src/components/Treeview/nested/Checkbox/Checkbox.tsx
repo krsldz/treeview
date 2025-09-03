@@ -16,6 +16,7 @@ const Checkbox: FC<CheckboxProps> = ({
     <div className={clsx("checkboxWrap", classNames.checkbox)}>
       <input
         type="checkbox"
+        aria-label={label}
         className={indeterminate ? "indeterminate" : ""}
         onChange={onChange}
         checked={checked}
