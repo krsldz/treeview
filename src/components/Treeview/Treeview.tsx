@@ -6,13 +6,13 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { EntityType, NodeItem, NodeMap, TreeViewProps, Value } from "./types";
+import { EntityType, NodeItem, NodeMap, TreeviewProps, Value } from "./types";
 import Node from "./nested/Node";
 import { flattenTree, getNodeMap, getNodeValues, getUniqueValues } from "./lib";
 
 import "./Treeview.css";
 
-const Treeview: FC<TreeViewProps> = ({
+const Treeview: FC<TreeviewProps> = ({
   data,
   onChange,
   value = [],

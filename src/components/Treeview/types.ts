@@ -25,7 +25,7 @@ export type NodeItem = {
 
 export type NodeMap = Record<string, NodeItem>;
 
-export type TreeViewProps = {
+export type TreeviewProps = {
   data: Array<NodeData>;
   onlyRead?: boolean;
   withIcons?: boolean;
