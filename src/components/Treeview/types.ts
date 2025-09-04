@@ -40,4 +40,5 @@ export type CustomClassNames = {
   label: string;
   dropdown: string;
   checkbox: string;
+  indeterminate: string;
 };
