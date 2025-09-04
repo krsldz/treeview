@@ -292,6 +292,10 @@ export const NATURE_TREE: Array<NodeData> = [
           { value: "1-2-5", title: "Southern Ocean" },
         ],
       },
+      {
+        value: "1-3",
+        title: "Seas",
+      },
     ],
   },
 ];

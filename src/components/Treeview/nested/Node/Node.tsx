@@ -44,10 +44,17 @@ const Node: FC<NodeProps> = ({
                   alt="folder"
                 />
               ) : (
-                <img className="folderIcon" src={file} alt="file" />
+                <img
+                  className={clsx("folderIcon", "title")}
+                  src={file}
+                  alt="file"
+                />
               ))}
             <span
-              className={clsx(hasChildren ? "" : "title", classNames.label)}>
+              className={clsx(
+                hasChildren || withIcons ? "" : "title",
+                classNames.label
+              )}>
               {node.title}
             </span>
           </div>
@@ -55,7 +62,10 @@ const Node: FC<NodeProps> = ({
           <Checkbox
             indeterminate={indeterminate}
             checked={selected}
-            classNames={classNames}
+            classNames={{
+              ...classNames,
+              checkbox: clsx(classNames.checkbox, hasChildren ? "" : "title"),
+            }}
             onChange={() => onChange(data)}
             label={node.title}
           />

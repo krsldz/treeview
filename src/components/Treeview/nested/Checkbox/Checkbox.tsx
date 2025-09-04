@@ -17,7 +17,9 @@ const Checkbox: FC<CheckboxProps> = ({
       <input
         type="checkbox"
         aria-label={label}
-        className={indeterminate ? "indeterminate" : ""}
+        className={
+          indeterminate ? clsx("indeterminate", classNames.indeterminate) : ""
+        }
         onChange={onChange}
         checked={checked}
         disabled={disabled}
