@@ -40,12 +40,12 @@ html, body {
   transform: rotate(45deg);
 }
 
-input.indeterminate {
+.storyCheckbox .indeterminate {
   background-color: #4caf50;
   position: relative;
 }
 
-input.indeterminate::before {
+.storyCheckbox .indeterminate::before {
   content: url("/public/indeterminate.svg");
   color: #f8f9fa;
   position: absolute;
