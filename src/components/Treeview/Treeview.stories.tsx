@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj, } from "@storybook/react";
 
 import Treeview from "./Treeview";
-import { EntityType } from "./types";
+import { EntityType, TreeviewProps } from "./types";
 import {
   ANIMAL_DATA_TREE,
   FILE_TREE,
@@ -17,7 +17,7 @@ const meta: Meta<typeof Treeview> = {
   component: Treeview,
   tags: ["autodocs"],
   decorators: [
-    (Story) => (
+    (Story: any) => (
       <div style={{ padding: "2rem" }}>
         <Story />
       </div>
@@ -106,7 +106,7 @@ export const WithCheckbox: Story = {
     onlyRead: false,
     data: NATURE_TREE,
   },
-  render: (args) => {
+  render: (args: TreeviewProps) => {
     const [value, setValue] = useState<EntityType[]>([]);
 
     const handleChange = (data: EntityType[]) => setValue(data);
@@ -120,7 +120,7 @@ export const WithIcons: Story = {
     withIcons: true,
     data: FILE_TREE,
   },
-  render: (args) => {
+  render: (args: TreeviewProps) => {
     return <Treeview {...args} />;
   },
 };
@@ -130,7 +130,7 @@ export const WithCustomStyles: Story = {
     onlyRead: false,
     data: ORGANIZATION_TREE,
   },
-  render: (args) => {
+  render: (args: TreeviewProps) => {
     const [value, setValue] = useState<EntityType[]>([]);
 
     const handleChange = (data: EntityType[]) => setValue(data);
@@ -162,7 +162,7 @@ export const WithCustomIcons: Story = {
       childIcon: <span>📄</span>,
     },
   },
-  render: (args) => {
+  render: (args: TreeviewProps) => {
     return <Treeview {...args} />;
   },
 };
