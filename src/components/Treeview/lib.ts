@@ -96,3 +96,21 @@ export const flattenTree = (data: NodeData): EntityType[] => {
 
   return result;
 };
+
+/**
+ *  Recursively checks if any descendant is selected
+ * @param {NodeData} node - a tree node
+ * @param {Value[]} selected - an array of selected values
+ * @returns {boolean}
+ */
+export const hasSelectedDescendants = (
+  node: NodeData,
+  selected: Value[]
+): boolean => {
+  if (!node.children) return false;
+
+  return node.children.some(
+    (child) =>
+      selected.includes(child.value) || hasSelectedDescendants(child, selected)
+  );
+};

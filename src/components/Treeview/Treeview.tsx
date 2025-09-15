@@ -8,7 +8,14 @@ import React, {
 } from "react";
 import { EntityType, NodeItem, NodeMap, TreeviewProps, Value } from "./types";
 import Node from "./nested/Node";
-import { flattenTree, getNodeMap, getNodeValues, getUniqueValues } from "./lib";
+import {
+  flattenTree,
+  getNodeMap,
+  getNodeValues,
+  getUniqueValues,
+  hasSelectedDescendants,
+} from "./lib";
+import { DEFAULT_COMPONENTS } from "./constants";
 
 import "./Treeview.css";
 
@@ -19,6 +26,7 @@ const Treeview: FC<TreeviewProps> = ({
   classNames = {},
   onlyRead = true,
   withIcons = false,
+  iconsComponents = DEFAULT_COMPONENTS,
 }) => {
   const [nodeMap, setNodeMap] = useState<NodeMap>({});
 
@@ -91,8 +99,7 @@ const Treeview: FC<TreeviewProps> = ({
     const node = nodeMap[id];
     const { data } = node;
     const isSelected = selected.includes(data.value);
-    const hasSelectedChildren =
-      data.children?.some((child) => selected.includes(child.value)) || false;
+    const isIndeterminate = hasSelectedDescendants(data, selected);
 
     return (
       <Node
@@ -101,11 +108,12 @@ const Treeview: FC<TreeviewProps> = ({
         classNames={classNames}
         onlyRead={onlyRead}
         withIcons={withIcons}
+        iconsComponents={iconsComponents}
         renderChildren={(ids) => ids.map(renderNode)}
         onToggle={onToggle}
         onChange={handleChange}
         selected={isSelected}
-        indeterminate={!isSelected && hasSelectedChildren}
+        indeterminate={!isSelected && isIndeterminate}
       />
     );
   };

@@ -1,3 +1,4 @@
+import { IconComponents } from "./../../types";
 import { ReactNode } from "react";
 import { CustomClassNames, NodeItem, Value } from "../../types";
 
@@ -11,4 +12,5 @@ export type NodeProps = {
   onChange: (node: NodeItem) => void;
   indeterminate?: boolean;
   classNames: Partial<CustomClassNames>;
+  iconsComponents: IconComponents;
 };
