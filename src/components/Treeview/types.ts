@@ -32,6 +32,7 @@ export type TreeviewProps = {
   value?: EntityType[];
   onChange?: (value: EntityType[]) => void;
   classNames?: Partial<CustomClassNames>;
+  iconsComponents?: IconComponents;
 };
 
 export type CustomClassNames = {
@@ -41,4 +42,9 @@ export type CustomClassNames = {
   dropdown: string;
   checkbox: string;
   indeterminate: string;
+};
+
+export type IconComponents = {
+  parentIcon: ReactNode;
+  childIcon: ReactNode;
 };

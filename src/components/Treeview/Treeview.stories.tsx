@@ -8,7 +8,7 @@ import {
   FILE_TREE,
   NATURE_TREE,
   ORGANIZATION_TREE,
-} from "./constants";
+} from "./mocks";
 
 import "./Treeview.css";
 
@@ -115,7 +115,7 @@ export const WithCheckbox: Story = {
   },
 };
 
-export const WithIcon: Story = {
+export const WithIcons: Story = {
   args: {
     withIcons: true,
     data: FILE_TREE,
@@ -150,5 +150,19 @@ export const WithCustomStyles: Story = {
         {...args}
       />
     );
+  },
+};
+
+export const WithCustomIcons: Story = {
+  args: {
+    withIcons: true,
+    data: ORGANIZATION_TREE,
+    iconsComponents: {
+      parentIcon: <span>📁</span>,
+      childIcon: <span>📄</span>,
+    },
+  },
+  render: (args) => {
+    return <Treeview {...args} />;
   },
 };

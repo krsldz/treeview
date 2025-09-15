@@ -6,10 +6,6 @@ import Dropdown from "../Dropdown";
 
 import "./Node.css";
 
-const folderOpened = "/folderOpened.svg";
-const folderClosed = "/folderClosed.svg";
-const file = "file.svg";
-
 const Node: FC<NodeProps> = ({
   data,
   onlyRead,
@@ -20,7 +16,9 @@ const Node: FC<NodeProps> = ({
   indeterminate,
   withIcons,
   classNames,
+  iconsComponents,
 }) => {
+  const { parentIcon, childIcon } = iconsComponents;
   const { data: node, children, open, id } = data;
   const hasChildren = children.length > 0;
 
@@ -36,20 +34,7 @@ const Node: FC<NodeProps> = ({
       <div className={clsx("node", classNames.node)}>
         {onlyRead ? (
           <div className="titleBlock">
-            {withIcons &&
-              (hasChildren ? (
-                <img
-                  className="folderIcon"
-                  src={open ? folderOpened : folderClosed}
-                  alt="folder"
-                />
-              ) : (
-                <img
-                  className={clsx("folderIcon", "title")}
-                  src={file}
-                  alt="file"
-                />
-              ))}
+            {withIcons && (hasChildren ? parentIcon : childIcon)}
             <span
               className={clsx(
                 hasChildren || withIcons ? "" : "title",
