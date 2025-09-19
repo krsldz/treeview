@@ -1,12 +1,5 @@
 # 🌳 React Treeview Component  
 
-<!-- Replace with your actual package name -->
-[![npm version](https://img.shields.io/npm/v/@your-scope/treeview.svg)](https://www.npmjs.com/package/@your-scope/treeview)  
-[![Bundle size](https://img.shields.io/bundlephobia/minzip/@your-scope/treeview)](https://bundlephobia.com/package/@your-scope/treeview)  
-[![License](https://img.shields.io/npm/l/@your-scope/treeview)](./LICENSE)  
-<!-- Replace `your-username` and `repo-name` with your actual GitHub repo -->
-[![Build Status](https://img.shields.io/github/actions/workflow/status/your-username/repo-name/ci.yml?branch=main)](https://github.com/your-username/repo-name/actions)  
-
 A lightweight, flexible, and accessible **Treeview component for React**.  
 Supports nested nodes, checkboxes with indeterminate state, icons, and customizable rendering.  
 
@@ -24,9 +17,9 @@ Supports nested nodes, checkboxes with indeterminate state, icons, and customiza
 ## 📦 Installation  
 
 ```bash
-npm install @your-scope/treeview
+npm install react-treeview-ui
 # or
-yarn add @your-scope/treeview
+yarn add react-treeview-ui
 ```
 
 | Prop        | Type                        | Default      | Description                                                   |
