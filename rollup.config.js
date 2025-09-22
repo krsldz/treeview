@@ -4,6 +4,9 @@ import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import image from "@rollup/plugin-image";
+import copy from "rollup-plugin-copy";
+import svgr from "@svgr/rollup";
 
 import postcss from "rollup-plugin-postcss";
 
@@ -28,9 +31,14 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
+      svgr(),
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),
       postcss(),
+      image(),
+      copy({
+        targets: [{ src: "public/*", dest: "dist/assets" }],
+      }),
     ],
     external: ["react", "react-dom"],
   },

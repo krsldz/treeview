@@ -1,6 +1,6 @@
 {
   "name": "react-treeview-ui",
-  "version": "1.0.1",
+  "version": "1.2.2",
   "description": "A lightweight, flexible, and accessible Treeview component for React",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -8,12 +8,6 @@
   "files": [
     "dist"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
-  },
   "scripts": {
     "test": "jest",
     "storybook": "storybook dev -p 6006",
@@ -21,12 +15,17 @@
     "build": "tsc",
     "rollup": "rollup -c --bundleConfigAsCjs"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "treeview",
+    "react-component"
+  ],
   "author": "krsldz",
   "license": "ISC",
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.4",
     "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.4",
@@ -40,6 +39,7 @@
     "@storybook/react": "^8.5.8",
     "@storybook/react-webpack5": "^8.5.8",
     "@storybook/test": "^8.5.8",
+    "@svgr/rollup": "^8.1.0",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/react": "^16.3.0",
     "@types/jest": "^30.0.0",
@@ -51,6 +51,7 @@
     "jest-transform-stub": "^2.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-dts": "^6.2.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "storybook": "^8.5.8",

@@ -1,13 +1,18 @@
 import React from "react";
 import clsx from "clsx";
 import { IconComponents } from "./types";
-
-const folderClosed = "/folderClosed.svg";
-const file = "file.svg";
+import { ReactComponent as Folder } from "../../../public/folderClosed.svg";
+import { ReactComponent as File } from "../../../public/file.svg";
 
 export const DEFAULT_COMPONENTS: IconComponents = {
-  parentIcon: <img className="folderIcon" src={folderClosed} alt="folder" />,
+  parentIcon: (
+    <div className="folderIcon">
+      <Folder />
+    </div>
+  ),
   childIcon: (
-    <img className={clsx("folderIcon", "title")} src={file} alt="file" />
+    <div className={clsx("folderIcon", "title")}>
+      <File />
+    </div>
   ),
 };

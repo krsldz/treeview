@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 type Value = string | number;
 type EntityType = {
@@ -42,4 +42,7 @@ type IconComponents = {
     childIcon: ReactNode;
 };
 
+declare const _default: React.NamedExoticComponent<TreeviewProps>;
+
+export { _default as default };
 export type { CustomClassNames, EntityType, IconComponents, NodeData, NodeItem, NodeMap, TreeviewProps, Value };
