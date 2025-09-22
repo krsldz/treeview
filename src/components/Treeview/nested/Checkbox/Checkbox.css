@@ -31,7 +31,7 @@ input:checked {
 }
 
 input:checked::before {
-  content: url("/public/check.svg");
+  content: url("./assets/check.svg");
   color: #f8f9fa;
   position: absolute;
   right: 1px;
@@ -44,7 +44,7 @@ input.indeterminate {
 }
 
 input.indeterminate::before {
-  content: url("/public/indeterminate.svg");
+  content: url("./assets/indeterminate.svg");
   color: #f8f9fa;
   position: absolute;
   right: 2px;

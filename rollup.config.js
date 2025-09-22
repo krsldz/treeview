@@ -34,7 +34,7 @@ export default [
       svgr(),
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),
-      postcss(),
+      postcss({ extract: true }),
       image(),
       copy({
         targets: [{ src: "public/*", dest: "dist/assets" }],

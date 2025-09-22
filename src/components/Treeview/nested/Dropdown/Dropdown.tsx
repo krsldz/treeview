@@ -9,7 +9,15 @@ import "./Dropdown.css";
 const Dropdown: FC<DropdownProps> = ({ open, onClick, className }) => {
   return (
     <div className={clsx("dropdown", className)} onClick={onClick}>
-      <div className="icon">{open ? <OpenIcon /> : <CloseIcon />}</div>
+      {open ? (
+        <div className="iconActive">
+          <OpenIcon />{" "}
+        </div>
+      ) : (
+        <div className="icon">
+          <CloseIcon />
+        </div>
+      )}
     </div>
   );
 };

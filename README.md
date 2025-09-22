@@ -9,8 +9,7 @@ Supports nested nodes, checkboxes with indeterminate state, icons, and customiza
 - Recursive rendering for unlimited nesting  
 - Checkbox support with indeterminate state  
 - Customizable icons and styling  
-- ypeScript support out of the box  
-- Small & dependency-free  
+- TypeScript support out of the box   
 
 ---
 
@@ -31,3 +30,11 @@ yarn add react-treeview-ui
 | `withIcons` | `boolean`                   | `false`      | Show icons next to nodes.                                     |
 
 
+## 🎨 Styles
+
+This package ships with a bundled stylesheet.
+You need to import it manually in your app entry point:
+
+```bash
+import "react-treeview-ui/dist/index.css";
+```
